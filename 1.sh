@@ -29,7 +29,9 @@ apt install gnome-terminal -y
 apt install gnome-text-editor -y
 apt install dconf* -y
 apt install pipx -y
-apt install flatpak -y
+apt install flatpak gnome-software-plugin-flatpak -y
+flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
+apt install gnome-software -y
 wait
 
 echo "Changing Graphical Login"
