@@ -29,10 +29,15 @@ wait
 # Making .config and.fonts Directories
 cd "$builddir" || exit
 mkdir -p /home/"$username"/.config
+chown -R "$username":"$username" /home/"$username"/.config
 mkdir -p /home/"$username"/.fonts
+chown -R "$username":"$username" /home/"$username"/.fonts
 mkdir -p /home/"$username"/.local/share/gnome-shell/extensions/
+chown -R "$username":"$username" /home/"$username"/.local/share/gnome-shell/extensions/
 mkdir -p /root/.icons
+chown -R root:root /root/.icons
 mkdir -p /home/"$username"/Pictures/backgrounds
+chown -R "$username":"$username" /home/"$username"/Pictures/backgrounds
 cp -R dotconf/kitty /home/"$username"/.config/
 chown -R "$username":"$username" /home/"$username"/.config/kitty
 
@@ -74,14 +79,14 @@ sleep 2
 flatpak install flathub com.google.Chrome -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub md.obsidian.Obsidian -y
-# flatpak install flathub com.dropbox.Client -y
-# flatpak install flathub org.libreoffice.LibreOffice -y
-# flatpak install flathub org.gnome.SimpleScan -y
-# flatpak install flathub com.usebottles.bottles -y
-# flatpak install flathub com.github.tchx84.Flatseal -y
+flatpak install flathub com.dropbox.Client -y
+flatpak install flathub org.libreoffice.LibreOffice -y
+flatpak install flathub org.gnome.SimpleScan -y
+flatpak install flathub com.usebottles.bottles -y
+flatpak install flathub com.github.tchx84.Flatseal -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
-# flatpak install flathub io.missioncenter.MissionCenter -y
-# flatpak install flathub com.tomjwatson.Emote -y
+flatpak install flathub io.missioncenter.MissionCenter -y
+flatpak install flathub com.tomjwatson.Emote -y
 
 # Install Gnome-extensions-cli
 pipx install gnome-extensions-cli --system-site-packages
@@ -98,12 +103,6 @@ rm code_1.88.1-1712771838_amd64.deb
 wget "https://global.download.synology.com/download/Utility/SynologyDriveClient/3.4.0-15724/Ubuntu/Installer/synology-drive-client-15724.x86_64.deb"
 wait
 sudo dpkg -i synology-drive-client-15724.x86_64.deb
-wait
-
-# Synology Assistant
-wget "https://global.synologydownload.com/download/Utility/Assistant/7.0.4-50051/Ubuntu/x86_64/synology-assistant_7.0.4-50051_amd64.deb"
-wait
-dpkg -i synology-assistant_7.0.4-50051_amd64.deb
 wait
 
 # Synology Chat
