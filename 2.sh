@@ -76,11 +76,7 @@ apt install curl -y
 apt install gh -y
 apt install gnome-disk-utility -y
 
-# Brave Browser-Beta
-curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list
-apt install brave-browser-beta -y
-
+flatpak install flathub one.ablaze.floorp -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub md.obsidian.Obsidian -y
 flatpak install flathub com.dropbox.Client -y
