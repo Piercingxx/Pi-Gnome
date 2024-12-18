@@ -75,8 +75,12 @@ apt install gparted -y
 apt install curl -y
 apt install gh -y
 apt install gnome-disk-utility -y
-sleep 2
-flatpak install flathub com.google.Chrome -y
+
+# Brave Browser-Beta
+curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list
+apt install brave-browser-beta -y
+
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub md.obsidian.Obsidian -y
 flatpak install flathub com.dropbox.Client -y
@@ -90,7 +94,6 @@ flatpak install flathub com.tomjwatson.Emote -y
 
 # Install Gnome-extensions-cli
 pipx install gnome-extensions-cli --system-site-packages
-
 
 # VSCode
 wget "https://vscode.download.prss.microsoft.com/dbazure/download/stable/e170252f762678dec6ca2cc69aba1570769a5d39/code_1.88.1-1712771838_amd64.deb"
@@ -111,7 +114,6 @@ wget "https://global.synologydownload.com/download/Utility/ChatClient/1.2.2-0222
 wait
 dpkg -i Synology%20Chat%20Client-1.2.2-0222.deb
 wait
-
 
 
 sudo apt update
@@ -157,21 +159,9 @@ wait
 # Extensions
 echo "Gnome Extensions"
 sleep 2
-# App Icons Taskbar
-sudo -u "$username" gext install aztaskbar@aztaskbar.gitlab.com
-# Awesome Tiles
-sudo -u "$username" gext install awesome-tiles@velitasali.com
-# Blur My Shell
-sudo -u "$username" gext install blur-my-shell@aunetx
-# Just Perfection
-sudo -u "$username" gext install just-perfection-desktop@just-perfection
-# Open Bar
-sudo -u "$username" gext install openbar@neuromorph
-
-
 apt install gnome-shell-extension-appindicator -y
 apt install gnome-shell-extension-gsconnect -y
-apt install gnome-shell-extension-caffeine -y
+
 
 
 #Nautilus Customization
