@@ -77,13 +77,9 @@ apt install gh -y
 apt install gnome-disk-utility -y
 
 flatpak install flathub one.ablaze.floorp -y
-flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub md.obsidian.Obsidian -y
-flatpak install flathub com.dropbox.Client -y
 flatpak install flathub org.libreoffice.LibreOffice -y
 flatpak install flathub org.gnome.SimpleScan -y
-flatpak install flathub com.usebottles.bottles -y
-flatpak install flathub com.github.tchx84.Flatseal -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
 flatpak install flathub io.missioncenter.MissionCenter -y
 flatpak install flathub com.tomjwatson.Emote -y
